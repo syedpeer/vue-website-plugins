@@ -58,9 +58,9 @@ new PrerenderSpaPlugin(
 
 ## simple exemple
 
-```
-main.js
+```text
 src
+ - main.js
  L _pages
   L index.vue
   L contact
