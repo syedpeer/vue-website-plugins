@@ -1,6 +1,6 @@
 # vue-website-plugins
 
-This package aims at simplifying static site coding in vuejs. It helps VueJS developers coding static site without use of static site generator, in one step. It also allows integrators to put in place static websites with simple httml and css components, and then adding reactivity without use of jquery.
+This package aims at simplifying static site coding with vuejs. It helps VueJS developers coding static sites without the use of static site generators, in few steps. It also allows integrators to put in place static websites with simple html and css components, and then adding reactivity without use of jquery.
 
 ## installation
 
@@ -8,11 +8,11 @@ npm i --save vue-website-template
 
 ## how to use
 
-### follow a simple convetion
+### follow a simple convention
 
 Code your static pages in a `_pages` directory, your layouts in a `_layouts` directory and some includes such as header in a `_includes` directory, all under under `src`. These directories must exist.
 
-The includes and layouts will simply automatically be registered as components, the pages tree will be used to generate corresponding static pages.
+The includes and layouts will simply automatically be registered as components, the pages tree will be used to generate the corresponding static pages.
 
 To do that, simply follow the two others steps.
 
@@ -20,24 +20,35 @@ To do that, simply follow the two others steps.
 
 In a VueJS/webpack project, in the `main.js`, use the plugin as follow :
 
-```
+```javascript
 import Vue from 'vue'
 import router from './router'
 import plugin from 'vue-website-plugins/vue'
 
 Vue.use(plugin, {router})
 ```
-Where `router` is your vue-router instance. No need to register your static pages over there, juste register your special routes that do not correspond to the above convention.
+Where `router` is your vue-router instance. No need to register your static pages over there, just register your special routes that do not correspond to the above convention.
 
 ### use webpack plugin
 
 In `webpack.prod.conf.js` first call 
 
-```
+```javascript
 const PrerenderSpaPlugin = require('vue-website-plugins/webpack')
 ```
 
-It's called PrerenderSpaPlugin because it's a simple overload of the prerender-spa-plugin. You can use it as is. Of course, here again, no need to specify any route corresponding to your static pages.
+It's called PrerenderSpaPlugin because it's a simple overload of the [prerender-spa-plugin](https://github.com/chrisvfritz/prerender-spa-plugin). You can use it as is. Of course, here again, no need to specify any route corresponding to your static pages.
+
+Lastly add the plugin as follow :
+
+```javascript
+new PrerenderSpaPlugin(
+  // Absolute path to compiled SPA
+  path.join(__dirname, '../dist'),
+  // List of routes to prerender
+  []
+)
+```
 
 ## simple exemple
 
@@ -55,7 +66,7 @@ It's called PrerenderSpaPlugin because it's a simple overload of the prerender-s
 
 ### src/_pages/index.vue
 
-```
+```html
 <template>
   <main-layout>
     <div class="my-content">
@@ -74,7 +85,7 @@ It's called PrerenderSpaPlugin because it's a simple overload of the prerender-s
 
 ### src/_pages/contact/index.vue
 
-```
+```html
 <template>
   <main-layout>
     <div @click="sendIt">
@@ -91,12 +102,11 @@ It's called PrerenderSpaPlugin because it's a simple overload of the prerender-s
     }
   }
 </script>
-
 ```
 
 ### src/_layouts/main-layout
 
-```
+```html
 <template>
   <div>
     <my-header></my-header>
@@ -109,7 +119,7 @@ It's called PrerenderSpaPlugin because it's a simple overload of the prerender-s
 
 ### src/_includes/my-header
 
-```
+```html
 <template>
   <div>menu</div>
 </template>
