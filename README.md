@@ -125,6 +125,18 @@ new PrerenderSpaPlugin(
 </template>
 ```
 
+### main.js
+
+You can basically instanciate Vue the following way :
+
+```javascript
+new Vue({
+  el: '#app',
+  router,
+  template: '<router-view id="app"/>'
+})
+```
+
 ## contributing
 
 You can build the sources with `npm run build` locally and use it with `npm link`
