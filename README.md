@@ -27,7 +27,7 @@ import plugin from 'vue-website-plugins/vue'
 
 Vue.use(plugin, {router})
 ```
-Where `router` is your vue-router instance. No need to register your static pages over there, just register your special routes that do not correspond to the above convention.
+Where `router` is your vue-router instance, in history mode. No need to register your static pages over there, just register your special routes that do not correspond to the above convention.
 
 ### use webpack plugin
 
