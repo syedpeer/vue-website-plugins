@@ -4,7 +4,7 @@ This package aims at simplifying static site coding with vuejs. It helps VueJS d
 
 ## installation
 
-npm i --save vue-website-template
+npm i --save vue-website-plugins
 
 ## how to use
 
