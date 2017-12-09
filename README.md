@@ -4,7 +4,13 @@ This package aims at simplifying static site coding with vuejs. It helps VueJS d
 
 ## installation
 
+### standard
+
 npm i --save vue-website-plugins
+
+### simpler
+
+If you launch a new project, you can use the [vue-website-template](https://github.com/code-forefront/vue-website-template) that is a vue webpack template embedding vue-website-plugins
 
 ## how to use
 
