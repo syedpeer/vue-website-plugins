@@ -56,7 +56,7 @@ new PrerenderSpaPlugin(
 )
 ```
 
-## simple exemple
+## simple example
 
 ```text
 src
