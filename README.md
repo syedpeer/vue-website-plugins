@@ -6,7 +6,7 @@ This package aims at simplifying static site coding with vuejs. It helps VueJS d
 
 ### standard
 
-npm i --save vue-website-plugins
+npm i --save-dev vue-website-plugins
 
 ### simpler
 
